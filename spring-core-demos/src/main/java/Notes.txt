@@ -1,0 +1,41 @@
+There are three types of dependency injection. It is best practise to use constructor dependency injection but field based is
+easy and mostly used in market.
+
+1) setter dependency injection: @Autowired is used to do setter dependency injection
+
+ @Autowired
+    public void setMessageService(MessageService messageService){
+        this.messageService = messageService;
+    }
+
+2) constructor dependency injection: @Autowired is used to do constructor dependency injection
+ @Autowired
+    public MessageController(MessageService messageService){
+        this.messageService = messageService;
+    }
+
+3) field based dependency injection:
+ @Autowired
+    public MessageService messageService;
+
+Spring Annotation:
+                            Above Method
+@Bean   : it is used to creat beans for Services
+
+@Autowired   : it is used to autowire the connection. when there is @component in configuration class then we can use @Autowired
+
+@Qualifier("Service_name") : It is used to call second component/beans by its Service_name
+
+@Value(${"Name"})  : Value you want to call from properties file. like(email, name, number)
+
+
+                        Above Class
+@Component("Service_name"): it can be used instead of creating beans in implementing class.
+
+@Componentscan(value = "package_ name")  :
+
+@Configuration  : is used in configuration class to configure
+
+@Primary    : It specify which beans to send first.
+
+@
